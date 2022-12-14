@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Faq;
 use App\Models\Laporan;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -45,5 +46,9 @@ class User extends Authenticatable
 
     public function laporan() {
         return $this->hasMany(Laporan::class);
+    }
+
+    public function faq() {
+        return $this->hasMany(Faq::class);
     }
 }
