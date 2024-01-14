@@ -32,13 +32,13 @@ Route::get('/faq', [FaqController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/layanan', [LaporanController::class, 'index'])->middleware('auth');
-Route::post('/laporan', [LaporanController::class, 'store']);
 
 Route::get('/riwayat', [LaporanController::class, 'dashboard'])->middleware('auth');
 
+Route::post('/laporan', [LaporanController::class, 'store']);
 Route::get('/laporan/{laporan:id}', [LaporanController::class, 'show'])->middleware('auth');
-Route::post('/laporan/delete/{laporan:id}', [LaporanController::class, 'destroy']);
 Route::put('/laporan/{laporan:id}', [LaporanController::class, 'update']);
+Route::post('/laporan/delete/{laporan:id}', [LaporanController::class, 'destroy']);
 
 // routes for authenticating
 Route::get('/register', [RegisterController::class, 'index']);
